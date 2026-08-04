@@ -1,304 +1,318 @@
-/* ============================================================
-   Utsho Bhowmik — Research Portfolio
-   Design tokens: field-notebook / scientific-report aesthetic
-   ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
-:root{
-  --paper:      #EFEDE3;   /* limestone paper background */
-  --paper-dim:  #E6E3D5;   /* slightly deeper paper, for alt sections */
-  --ink:        #1B211D;   /* near-black ink, body text */
-  --ink-soft:   #4B5148;   /* softened ink for secondary text */
-  --river:      #204C4E;   /* deep river-teal — primary brand color */
-  --river-mid:  #3E7C7E;   /* mid teal — links, hovers */
-  --sediment:   #9C5122;   /* burnt clay — sparing accent, risk/highlight */
-  --moss:       #6E7C4F;   /* moss — secondary tag color */
-  --line:       #D3CEB9;   /* hairline divider */
-  --card-bg:    #F6F5EC;
-
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body:    'Inter', -apple-system, sans-serif;
-  --font-mono:    'IBM Plex Mono', ui-monospace, monospace;
-
-  --max-w: 1040px;
-}
-
-*{ box-sizing:border-box; }
-
-html{ scroll-behavior:smooth; }
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Utsho Bhowmik | Research Portfolio</title>
+<style>
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--font-body);
-  font-size:16px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
+  font-family:Arial, sans-serif;
+  background:#f5f5f5;
+  color:#222;
+  line-height:1.6;
+}
+header{
+  background-image:
+  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+  url('Header.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color:white;
+  padding:60px 15px;
+  text-align:center;
 }
 
-img{ max-width:100%; display:block; }
-
-a{ color:var(--river); text-decoration:none; }
-a:hover{ color:var(--sediment); }
-a:focus-visible, button:focus-visible{
-  outline:2px solid var(--sediment);
-  outline-offset:3px;
+.profile-photo{
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  border-radius:12px;
+  border:4px solid white;
+  margin-bottom:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
-
-.wrap{
-  max-width:var(--max-w);
-  margin:0 auto;
-  padding:0 24px;
+h1{margin:0;font-size:40px;}
+.subtitle{font-size:18px;opacity:0.8;}
+.container{max-width:1100px;margin:auto;padding:20px;}
+section{
+  background:white;
+  margin:20px 0;
+  padding:25px;
+  border-radius:10px;
 }
-
-/* ---------- Nav ---------- */
-.site-nav{
-  position:sticky; top:0; z-index:50;
-  background:rgba(239,237,227,0.92);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
-}
-.site-nav .wrap{
-  display:flex; align-items:center; justify-content:space-between;
-  padding-top:16px; padding-bottom:16px;
-}
-.nav-mark{
-  font-family:var(--font-display);
-  font-weight:600; font-size:19px;
-  color:var(--ink); letter-spacing:0.01em;
-}
-.nav-mark span{ color:var(--sediment); }
-.nav-links{ display:flex; gap:28px; list-style:none; margin:0; padding:0; }
-.nav-links a{
-  font-family:var(--font-mono);
-  font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em;
-  color:var(--ink-soft);
-}
-.nav-links a:hover, .nav-links a.active{ color:var(--sediment); }
-
-/* ---------- Hero (contour-line signature motif) ---------- */
-.hero{
-  position:relative;
-  overflow:hidden;
-  padding:88px 0 64px;
-  border-bottom:1px solid var(--line);
-}
-.hero-contours{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  opacity:0.16;
-  pointer-events:none;
-}
-.hero .wrap{ position:relative; z-index:1; }
-.eyebrow{
-  font-family:var(--font-mono);
-  font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
-  color:var(--river-mid);
-  margin:0 0 14px;
-}
-.hero h1{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:clamp(38px, 6vw, 60px);
-  line-height:1.05;
-  margin:0 0 14px;
-  color:var(--river);
-}
-.hero .lede{
-  font-size:18px;
-  max-width:560px;
-  color:var(--ink-soft);
-  margin:0 0 26px;
-}
-.tag-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-.tag{
-  font-family:var(--font-mono);
-  font-size:12px;
-  padding:5px 11px;
-  border:1px solid var(--line);
-  border-radius:2px;
-  color:var(--ink-soft);
-  background:var(--card-bg);
-}
-.tag.moss{ border-color:var(--moss); color:var(--moss); }
-
-.hero-actions{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
-.btn{
-  font-family:var(--font-mono);
-  font-size:13px; letter-spacing:0.04em;
-  padding:11px 20px;
-  border:1px solid var(--river);
-  color:var(--river);
-  background:transparent;
-  display:inline-block;
-  border-radius:2px;
-  transition:background .15s ease, color .15s ease;
-}
-.btn:hover{ background:var(--river); color:var(--paper); }
-.btn.solid{ background:var(--river); color:var(--paper); }
-.btn.solid:hover{ background:var(--sediment); border-color:var(--sediment); color:var(--paper); }
-
-/* ---------- Sections ---------- */
-section{ padding:56px 0; }
-section.alt{ background:var(--paper-dim); }
-.section-head{ margin-bottom:32px; }
-.section-head .eyebrow{ margin-bottom:8px; }
-.section-head h2{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:30px;
-  margin:0;
-  color:var(--ink);
-}
-
-/* ---------- Project cards (core-sample styling) ---------- */
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-  gap:20px;
-}
-.core-card{
-  position:relative;
-  background:var(--card-bg);
-  border:1px solid var(--line);
-  padding:24px 22px 22px 26px;
-  border-radius:2px;
-}
-.core-card::before{
-  content:"";
-  position:absolute; left:0; top:0; bottom:0;
-  width:5px;
-  background:var(--risk, var(--moss));
-}
-.core-card .eyebrow{ margin-bottom:10px; }
-.core-card h3{
-  font-family:var(--font-display);
-  font-size:21px; font-weight:600;
-  margin:0 0 10px;
-  color:var(--river);
-  line-height:1.25;
-}
-.core-card p{ color:var(--ink-soft); font-size:14.5px; margin:0 0 16px; }
-.core-card .read-link{
-  font-family:var(--font-mono);
-  font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em;
-}
-
-/* ---------- Publications list ---------- */
-.pub-list{ list-style:none; margin:0; padding:0; }
-.pub-item{
-  padding:18px 0;
-  border-bottom:1px solid var(--line);
-  display:flex; gap:20px; align-items:baseline; flex-wrap:wrap;
-}
-.pub-item:last-child{ border-bottom:none; }
-.pub-date{
-  font-family:var(--font-mono);
-  font-size:12.5px;
-  color:var(--river-mid);
-  min-width:52px;
-}
-.pub-body b{ display:block; font-size:15.5px; margin-bottom:3px; }
-.pub-venue{ font-size:13.5px; color:var(--ink-soft); }
-.pub-item a.view{
-  font-family:var(--font-mono);
-  font-size:12px; text-transform:uppercase; letter-spacing:0.05em;
-  margin-left:auto;
-}
-
-/* ---------- Skills / interests tag rows ---------- */
-.tag-block{ display:flex; flex-wrap:wrap; gap:9px; }
-
-/* ---------- Cards generic (about page) ---------- */
+h2{border-left:5px solid #444;padding-left:10px;}
 .card{
-  background:var(--card-bg);
-  border:1px solid var(--line);
-  border-radius:2px;
-  padding:20px 22px;
-  margin-bottom:14px;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  margin:10px 0;
 }
-.card h3{ font-family:var(--font-display); font-size:18px; margin:0 0 8px; color:var(--river); }
-.card p{ margin:0 0 6px; color:var(--ink-soft); font-size:14.5px; }
-.card .links a{ font-family:var(--font-mono); font-size:12.5px; margin-right:18px; text-transform:uppercase; letter-spacing:0.04em; }
-
-/* ---------- Project detail page ---------- */
-.project-header{ padding:56px 0 36px; border-bottom:1px solid var(--line); }
-.project-header h1{
-  font-family:var(--font-display); font-weight:600;
-  font-size:clamp(30px,4.4vw,44px);
-  line-height:1.1; margin:14px 0 18px; color:var(--river);
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
-.abstract{
-  font-size:17px; color:var(--ink-soft); max-width:700px;
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  margin:5px;
+  background:#e0e0e0;
+  border-radius:20px;
+  font-size:13px;
 }
-.meta-row{ display:flex; gap:26px; flex-wrap:wrap; margin-top:22px; }
-.meta-item{ font-family:var(--font-mono); font-size:12.5px; color:var(--ink-soft); }
-.meta-item b{ display:block; color:var(--ink); font-size:13.5px; font-family:var(--font-body); font-weight:600; }
-
-.method-steps{ list-style:none; margin:0; padding:0; counter-reset:step; }
-.method-steps li{
-  counter-increment:step;
-  position:relative;
-  padding:0 0 26px 46px;
-  border-left:1px solid var(--line);
-  margin-left:14px;
-}
-.method-steps li:last-child{ border-color:transparent; padding-bottom:0; }
-.method-steps li::before{
-  content:counter(step,decimal-leading-zero);
-  position:absolute; left:-14px; top:0;
-  width:28px; height:28px;
-  background:var(--river); color:var(--paper);
-  border-radius:50%;
-  font-family:var(--font-mono); font-size:11px;
-  display:flex; align-items:center; justify-content:center;
-}
-.method-steps h4{ margin:0 0 6px; font-size:16px; }
-.method-steps p{ margin:0; color:var(--ink-soft); font-size:14.5px; }
-
-.finding-grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:16px;
-}
-.finding{
-  background:var(--card-bg); border:1px solid var(--line); border-radius:2px;
-  padding:18px 20px;
-}
-.finding p{ margin:0; font-size:14.5px; color:var(--ink); }
-
-.figure-grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-}
-.figure-grid figure{ margin:0; }
-.figure-grid img{ border:1px solid var(--line); border-radius:2px; }
-.figure-grid figcaption{
-  font-family:var(--font-mono); font-size:11.5px; color:var(--ink-soft);
-  margin-top:8px;
-}
-
-.project-cta{
-  border:1px solid var(--line); background:var(--card-bg);
-  padding:26px 28px; border-radius:2px;
-  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
-}
-
-/* ---------- Footer ---------- */
 footer{
-  background:var(--river); color:var(--paper);
-  padding:44px 0 30px;
+  text-align:center;
+  padding:20px;
+  background:#222;
+  color:white;
 }
-footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; }
-footer h3{ font-family:var(--font-display); margin:0 0 10px; font-size:20px; }
-footer a{ color:var(--paper); opacity:0.85; }
-footer a:hover{ opacity:1; color:#F0C79A; }
-.footer-meta{ font-family:var(--font-mono); font-size:12px; opacity:0.65; margin-top:26px; }
-
-@media (max-width:640px){
-  .nav-links{ gap:16px; }
-  .pub-item a.view{ margin-left:0; }
-  .project-cta{ flex-direction:column; align-items:flex-start; }
+img{
+  width:100%;
+  border-radius:10px;
 }
+a{color:#2f2f2f;font-weight:bold;}
+</style>
+</head>
+<body>
 
+<header>
+
+  <img src="Background.jpg" class="profile-photo">
+
+  <h1>Utsho Bhowmik</h1>
+
+  <p class="subtitle">
+    Computational Environmental Researcher
+  </p>
+
+  <p>
+    KUET Graduate | Groundwater Modeling | Machine Learning | GIS
+  </p>
+
+</header>
+
+<div class="container">
+
+<!-- ABOUT -->
+<section>
+<h2>About Me</h2>
+<p>
+Civil Engineering graduate from KUET with focus on environmental and water resource engineering. Experienced in computational modeling, GIS, remote sensing, groundwater flow simulation (MODFLOW), and contaminant transport (MT3DMS).
+</p>
+</section>
+
+<!-- EDUCATION -->
+<section>
+<h2>Education</h2>
+<div class="card">
+<b>Khulna University of Engineering and Technology (KUET)</b><br>
+B.Sc. in Civil Engineering<br>
+CGPA: 3.27 / 4.00 | Graduation: 2025 | Final Semester GPA: 3.53/4.00
+</div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section>
+<h2>Research Interests</h2>
+<div class="badge">Groundwater Contamination</div>
+<div class="badge">Heavy Metal Transport</div>
+<div class="badge">Machine Learning in Water Quality</div>
+<div class="badge">GIS & Remote Sensing</div>
+<div class="badge">MODFLOW / MT3DMS Modeling</div>
+</section>
+
+<!-- SKILLS -->
+<section>
+<h2>Technical Skills</h2>
+<div class="badge">Python</div>
+<div class="badge">Google Earth Engine</div>
+<div class="badge">ArcGIS</div>
+<div class="badge">MODFLOW</div>
+<div class="badge">MT3DMS</div>
+<div class="badge">AutoCAD</div>
+<div class="badge">ETABS</div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section>
+<h2>Publications</h2>
+<div class="card">
+<b>Modeling of long-term chromium migration from the Rajbandh open landfill: a case study</b><br>
+Water Practice and Technology (2026)<br>
+  
+<a href="https://doi.org/10.2166/wpt.2026.253" target="_blank">
+View Paper
+</a>
+  
+</div>
+
+<div class="card">
+<b>Study on effect of upflow and downflow forced aeration on composting in a closed system using a software-based model</b><br>
+8th International Conference on Civil Engineering for Sustainable Development (2026)<br>
+
+<a href="https://iccesd.kuet.ac.bd/Papers/886.pdf" target="_blank">
+View Paper
+</a>
+
+</div>
+
+<div class="card">
+<b>Multiscale Wavelet–Intelligence Synergy for Hydrological Prediction: A Critical and Quantitative Appraisal of MODWT and DWT</b><br>
+2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence & Networking (QPAIN)
+</div>
+</section>
+
+<!-- ONGOING RESEARCH -->
+<section>
+<h2>Ongoing Research</h2>
+<div class="card">
+<b>Spatial and Temporal Prediction of Heavy Metal Concentrations in Bangladesh River Sediments (2010–2025) Using Google Earth Engine and Supervised Machine Learning</b>
+<ul>
+<li>This research aims to forecast 2025 heavy metal concentrations (Pb, Cr, Cd) in Bangladesh’s river sediments by
+  modeling the relationship between land-use changes, climate variability, and laboratory measured pollution data.</li>
+<li>The study integrates 720 laboratory observations from 48 major rivers with environmental predictors derived from Google Earth Engine,
+  including annual rainfall, urban and industrial land-use percentages, and population density.</li>
+<li>Random Forest Regression is used to capture complex non-linear environmental relationships. The model follows an 80/20 train-test strategy 
+  with 2024 data reserved as a final validation dataset.</li>
+<li>Expected outcomes include predicted heavy metal concentrations for 2025 and spatial hotspot maps to support environmental policy development 
+  and industrial pollution monitoring.</li>
+</ul>
+</div>
+</section>
+
+<!-- RESEARCH PROJECT -->
+<section>
+<h2>Research Project</h2>
+<div class="card">
+<h3>ASSESSMENT OF HEAVY METAL POLLUTION IN THE SEDIMENT OF THE RUPSHA RIVER</h3>
+
+<h4>Objective</h4>
+<ul>
+<li>To determine the concentration of selected heavy metals (As, Cd, Cr, Cu, Pb, Ni, Mn, Zn) in the sediments of the Rupsha River using ICP-MS.</li>
+<li>To compare heavy metal concentration in the Rupsha River with various rivers around the world from available literature.</li>
+<li>To assess heavy metal contamination using established indices such as Igeo, Cf, Cd, PLI, Er, and PERI.</li>
+</ul>
+
+<h4>Methodology</h4>
+<ul>
+<li><b>Sample Collection:</b> Surface sediment samples (0–5 cm depth) were collected from upstream, midstream, and downstream stations on July 13, 2024 and combined to create representative composite samples.</li>
+<li><b>Sample Preparation:</b> Sediments were oven-dried at 105°C, crushed, and subjected to microwave-assisted acid digestion (USEPA 3051A) using concentrated HNO₃ and HCl.</li>
+<li><b>Analytical Analysis:</b> Heavy metal concentrations (As, Cd, Cr, Cu, Pb, Ni, Zn, and Mn) were quantified using ICP-MS and evaluated using multiple ecological risk indices.</li>
+</ul>
+
+<h4>Key Findings</h4>
+<ul>
+<li>Manganese and Nickel exhibited the highest concentration levels among the analyzed metals.</li>
+<li>Nickel concentrations exceeded the Severe Effect Level (75 mg/kg) across all sampling locations.</li>
+<li>The Igeo and Cf indices identified Cadmium and Nickel as the primary moderate contaminants.</li>
+<li>The overall Pollution Load Index (PLI) remained below 1, indicating the river is not critically polluted.</li>
+<li>The Potential Ecological Risk Index (PERI) showed moderate ecological concern primarily due to Cadmium.</li>
+</ul>
+<div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+
+<img src="Digestion of Sediment Samples using Titan MPS..jpg"
+style="width:45%; height:350px; object-fit:cover;">
+
+<img src="Fitration of Digested Sediment Samples.jpg"
+style="width:45%; height:350px; object-fit:cover;">
+
+</div>
+
+<br>
+
+<img src="Variation of Potential Ecological Risk Factors (Er) of heavy metals at different stations.png"
+style="max-width:800px; width:100%; display:block; margin:auto;">
+</section>
+
+<!-- FIGURES -->
+<section>
+<h2>Research Figures (Using GIS)</h2>
+<div class="grid">
+<img src="Fig-1_study area.jpg" />
+<img src="DEM.jpg" />
+<img src="Advection.jpg" />
+<img src="Head 2030.jpg" />
+<img src="Cr Migration Plume in Sand layer (33).jpg" />
+</div>
+</section>
+
+<!-- EXTRACURRICULAR -->
+<section>
+<h2>Extracurricular Activities</h2>
+
+<div class="card">
+<h3>Volunteer at SCIP Plastic Project (KUET Part)</h3>
+<p>
+A German–Bangladeshi collaborative initiative focused on reducing land-based plastic pollution entering the Bay of Bengal through awareness, research, and sustainable waste management.
+</p>
+<p>
+<a href="SCIP Volenteer Certificate.jpeg" target="_blank">View Certification</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.scip-plastics.com/" target="_blank">Project Website
+</a>
+</p>
+</div>
+
+<div class="card">
+<h3>Vice President of Sylhet Association, KUET</h3>
+<p>
+A student association dedicated to supporting Sylheti students at KUET, promoting Sylheti cultural heritage including songs, dramas, and traditional foods, and organizing fundraising initiatives during natural disasters such as the devastating 2022 flash flood.
+</p>
+<p>
+<a href="Sylhet Association Member List.jpeg" target="_blank">Member List</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.facebook.com/profile.php?id=61583079516585" target="_blank">Page Link</a>
+</p>
+</div>
+
+<div class="card">
+<h3>Assistant Coordinator of KUET Gym</h3>
+<p>
+Worked in student fitness and engagement coordination activities.
+</p>
+<p>
+<a href="KUET GYM Club Members List.pdf" target="_blank">Member List 2025</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.facebook.com/onlyforkuetstudents" target="_blank">Page Link
+</a>
+</p>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+<h2>Testimonials & Recommendations</h2>
+
+<div class="card">
+<b>Thesis Supervisor LOR</b><br>
+<a href="LOR (Supervisor).pdf" target="_blank">View Document</a>
+</div>
+
+<div class="card">
+<b>University Testimonial</b><br>
+<a href="LOR ( University ).pdf" target="_blank">View Document</a>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2>Contact</h2>
+<p>Email: utshobhowmik09@gmail.com</p>
+<p>WhatsApp: +8801521554447</p>
+<p>Location: Sylhet, Bangladesh</p>
+<p>
+LinkedIn: <a href="https://linkedin.com/in/utsho-bhowmik">Profile</a><br>
+GitHub: <a href="https://github.com/bhowmik99">Repository</a>
+</p>
+<p><b>Open to research collaboration, graduate opportunities, and interdisciplinary environmental modeling projects.</b></p>
+</section>
+
+</div>
+
+<footer>
+  © 2026 Utsho Bhowmik | Research Portfolio
+</footer>
+
+</body>
+</html>
