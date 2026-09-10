@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>River Water Quality & Machine Learning | Utsho Bhowmik</title>
+  <meta name="description" content="Ongoing research integrating literature-derived heavy-metal observations from Bangladesh rivers with geospatial environmental predictors and machine learning.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip-link" href="#article">Skip to content</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">Utsho Bhowmik <small>Environmental Research</small></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../index.html#research" aria-current="page">Research Experience</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../assets/docs/Utsho_Bhowmik_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#research">Research Experience</a> / River water quality & ML</div>
+    <span class="status ongoing">Ongoing research</span>
+    <h1>Spatial analysis and machine learning for river water quality</h1>
+    <p class="lede">A developing multi-river Bangladesh research framework that converts published heavy-metal observations into a structured spatiotemporal database, links sampling locations to environmental predictors, and prepares the data foundation for machine-learning analysis.</p>
+    <div class="page-meta"><span>Supervisor: Prof. Md. Saiful Islam · KUET</span><span>Literature synthesis completed</span><span>Geospatial predictor extraction in progress</span></div>
+  </div>
+</header>
+
+<main class="container page-layout" id="article">
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-title">On this page</div>
+    <a href="#question">Research direction</a>
+    <a href="#database">Literature database</a>
+    <a href="#schema">Database structure</a>
+    <a href="#progress">Research phases</a>
+    <a href="#buffers">Geospatial extraction</a>
+    <a href="#ml">Machine-learning phase</a>
+    <a href="#quality">Data-quality strategy</a>
+    <a href="#next">Next milestones</a>
+  </aside>
+
+  <article class="article">
+    <section class="article-section" id="question">
+      <h2>Research direction</h2>
+      <div class="reading">
+        <p>Heavy-metal measurements in Bangladeshi rivers are distributed across individual studies, locations, years, sample types, analytical methods, and reporting conventions. That fragmentation makes it difficult to ask broader spatial questions about how environmental conditions may be associated with observed contamination.</p>
+        <p>This project is building the data infrastructure needed to investigate those relationships. The current objective is to integrate <strong>published water and sediment heavy-metal observations</strong> with climatic, land-use, population, and other spatial predictors, then use machine-learning methods to explore and predict concentration patterns.</p>
+        <div class="callout"><strong>Current research question:</strong> can a harmonized literature-derived dataset, augmented with multi-scale geospatial predictors, explain meaningful variation in river heavy-metal concentrations across Bangladesh?</div>
+      </div>
+    </section>
+
+    <section class="article-section" id="database">
+      <h2>Phase 1: literature review → structured database</h2>
+      <div class="reading">
+        <p>The literature-review stage is already substantially complete. Rather than keeping the review as narrative notes, I extracted the reported information into a structured workbook so that each sampling record can later be joined to spatial predictors and used in analysis.</p>
+        <p>The working database currently contains <strong>557 populated records</strong> from <strong>28 DOI-tagged papers</strong>, covering <strong>12 rivers</strong> and <strong>54 fields</strong>. Published studies represented in the workbook extend through 2025, while the reported observation-year field currently spans <strong>2010–2022</strong> where study years are available.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric-box"><strong>557</strong><span>extracted study records</span></div>
+        <div class="metric-box"><strong>28</strong><span>DOI-tagged source papers</span></div>
+        <div class="metric-box"><strong>12</strong><span>Bangladesh rivers represented</span></div>
+        <div class="metric-box"><strong>54</strong><span>database fields</span></div>
+      </div>
+      <div class="callout accent"><strong>Why this matters:</strong> the literature review is being treated as a reproducible data-building step, not only as background reading. The output becomes the observational layer for the later geospatial and machine-learning workflow.</div>
+    </section>
+
+    <section class="article-section" id="schema">
+      <h2>What is being extracted</h2>
+      <p class="reading">The workbook combines bibliographic, spatial, temporal, analytical and environmental information. Missing values are preserved rather than silently filled, allowing later preprocessing decisions to remain explicit.</p>
+      <div class="schema-grid">
+        <div class="schema-card"><strong>Paper metadata</strong><span>Paper ID, DOI, journal, author & year</span></div>
+        <div class="schema-card"><strong>Spatial context</strong><span>River, division, station, latitude, longitude, population field</span></div>
+        <div class="schema-card"><strong>Time & sample</strong><span>Observation year, season, water/sediment, analytical method</span></div>
+        <div class="schema-card"><strong>Physicochemical data</strong><span>pH, EC, DO, BOD, COD, salinity, texture, OM and other reported variables</span></div>
+        <div class="schema-card"><strong>Heavy metals</strong><span>As, Cr, Cd, Pb, Cu, Zn, Ni, Fe, Mn and Co</span></div>
+        <div class="schema-card"><strong>Source notes</strong><span>Sampling-context notes and reporting details retained for traceability</span></div>
+        <div class="schema-card"><strong>Sample coverage</strong><span>Both sediment and water observations are represented</span></div>
+        <div class="schema-card"><strong>Data provenance</strong><span>Paper and DOI fields support record-level trace-back</span></div>
+      </div>
+
+      <h3>Representative database snapshot</h3>
+      <div class="table-wrap wide-table">
+        <table>
+          <thead><tr><th>Source</th><th>River</th><th>Latitude</th><th>Longitude</th><th>Year</th><th>Sample</th><th>As</th><th>Cr</th><th>Cd</th><th>Pb</th></tr></thead>
+          <tbody>
+            <tr><td>Islam et al., 2022</td><td>Old Brahmaputra</td><td>24°46′11.37″ N</td><td>90°24′00.29″ E</td><td>2021</td><td>Sediment</td><td>1.07</td><td>30.51</td><td>4.36</td><td>32.29</td></tr>
+            <tr><td>Islam et al., 2022</td><td>Old Brahmaputra</td><td>24°44′58.46″ N</td><td>90°25′24.89″ E</td><td>2021</td><td>Sediment</td><td>1.93</td><td>37.28</td><td>4.92</td><td>26.04</td></tr>
+            <tr><td>Nargis et al., 2019</td><td>Buriganga</td><td>23°44′36.61″ N</td><td>90°20′45.08″ E</td><td>2015</td><td>Sediment</td><td>0.28</td><td>76.44</td><td>0.23</td><td>3.93</td></tr>
+            <tr><td>Nargis et al., 2019</td><td>Buriganga</td><td>23°42′27.55″ N</td><td>90°24′13.07″ E</td><td>2015</td><td>Sediment</td><td>0.22</td><td>42.01</td><td>0.24</td><td>40.87</td></tr>
+            <tr><td>Hasan et al., 2024</td><td>Karnaphuli</td><td>22.5215193</td><td>92.03474501</td><td>2022</td><td>Water</td><td>—</td><td>0.071</td><td>0.001</td><td>0.09</td></tr>
+            <tr><td>Hasan et al., 2024</td><td>Padma</td><td>24.5056721</td><td>88.87564321</td><td>2022</td><td>Water</td><td>—</td><td>0.03</td><td>BDL</td><td>0.197</td></tr>
+            <tr><td>Hasan et al., 2024</td><td>Meghna</td><td>23.6329117</td><td>90.51890552</td><td>2022</td><td>Water</td><td>—</td><td>0.04</td><td>0.081</td><td>0.271</td></tr>
+            <tr><td>Hasan et al., 2024</td><td>Shitalakhya</td><td>23.6099785</td><td>90.61528259</td><td>2022</td><td>Water</td><td>—</td><td>0.09</td><td>0.01</td><td>0.235</td></tr>
+            <tr><td>Ali et al., 2016</td><td>Karnaphuli</td><td>22.53544722</td><td>92.40662778</td><td>2014</td><td>Sediment</td><td>13.17</td><td>57.31</td><td>1.10</td><td>35.25</td></tr>
+            <tr><td>Ali et al., 2016</td><td>Karnaphuli</td><td>22.315132</td><td>91.819424</td><td>2014</td><td>Sediment</td><td>13.38</td><td>111.48</td><td>1.40</td><td>61.86</td></tr>
+            <tr><td>Islam et al., 2015</td><td>Paira</td><td>22°27′03.88″ N</td><td>90°26′50.11″ E</td><td>2012</td><td>Sediment</td><td>5.4</td><td>46</td><td>0.79</td><td>15</td></tr>
+            <tr><td>Islam et al., 2015</td><td>Paira</td><td>22°24′42.53″ N</td><td>90°26′37.78″ E</td><td>2012</td><td>Sediment</td><td>17</td><td>57</td><td>1.1</td><td>44</td></tr>
+            <tr><td>Proshad et al., 2021</td><td>Rupsa</td><td>22.80 N</td><td>89.54 E</td><td>2017</td><td>Water</td><td>0.00605</td><td>0.00887</td><td>0.00138</td><td>0.00732</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">The snapshot uses records with reported latitude and longitude from the working literature-extraction workbook. Values are shown as recorded in the source database; concentration units depend on sample context (water or sediment) and are intentionally not harmonized in this preview.</p>
+    </section>
+
+    <section class="article-section" id="progress">
+      <h2>Research progress</h2>
+      <div class="phase-list">
+        <div class="phase"><div class="phase-code">PHASE 01</div><div><h3>Literature review & record extraction</h3><span class="phase-status done">Completed</span><p>Relevant studies were reviewed and their source metadata, sampling context, water/sediment observations, analytical methods, physicochemical variables and heavy-metal concentrations were extracted into the working database.</p></div></div>
+        <div class="phase"><div class="phase-code">PHASE 02</div><div><h3>Geospatial preparation & environmental predictor extraction</h3><span class="phase-status active">In progress</span><p>Current work is preparing reported sampling locations for spatial analysis and extracting environmental information around them, including rainfall, population and buffer-zone data at 200 m, 500 m and 1,000 m radii. Land-use and other spatial predictors are part of the broader project design described in the research brief.</p></div></div>
+        <div class="phase"><div class="phase-code">PHASE 03</div><div><h3>Data harmonization & modeling dataset preparation</h3><span class="phase-status planned">Required before modeling</span><p>The literature-derived records use different reporting conventions, sample types and units. These differences will need to be handled explicitly before a common modeling dataset is finalized; missing values will remain traceable to their sources.</p></div></div>
+        <div class="phase"><div class="phase-code">PHASE 04</div><div><h3>Machine-learning model development</h3><span class="phase-status planned">Planned</span><p>After predictor assembly and data-quality checks, the next phase is to design and evaluate machine-learning models for heavy-metal concentration prediction and investigation of environmental drivers.</p></div></div>
+      </div>
+    </section>
+
+    <section class="article-section" id="buffers">
+      <h2>Multi-scale environmental predictor extraction</h2>
+      <div class="reading">
+        <p>The current geospatial stage is designed around three buffer scales—<strong>200 m, 500 m and 1,000 m</strong>—around sampling locations. The purpose is not to assume that one radius is universally correct, but to test whether local versus broader landscape context changes the relationship between environmental predictors and observed concentrations.</p>
+      </div>
+      <div class="three-col">
+        <div class="card"><div class="card-eyebrow">200 m</div><h3>Working buffer radius</h3><p>Environmental variables are being extracted within a 200 m radius around reported sampling locations.</p></div>
+        <div class="card"><div class="card-eyebrow">500 m</div><h3>Working buffer radius</h3><p>The same predictor families are being assembled at a 500 m radius for multi-scale comparison.</p></div>
+        <div class="card"><div class="card-eyebrow">1,000 m</div><h3>Working buffer radius</h3><p>A 1,000 m radius is also being extracted so the final modeling stage can evaluate which spatial scale is most useful.</p></div>
+      </div>
+      <h3>Predictor families being assembled</h3>
+      <div class="schema-grid">
+        <div class="schema-card"><strong>Rainfall</strong><span>Climatic context aligned to spatial/temporal observations where feasible</span></div>
+        <div class="schema-card"><strong>Population</strong><span>Human-pressure proxy around sampled river locations</span></div>
+        <div class="schema-card"><strong>Land use / land cover</strong><span>Urban, agricultural and other surrounding surface characteristics</span></div>
+        <div class="schema-card"><strong>Spatial context</strong><span>River, sampling location and basin-scale descriptors</span></div>
+      </div>
+    </section>
+
+    <section class="article-section" id="ml">
+      <h2>The machine-learning phase is next</h2>
+      <div class="reading">
+        <p>The supplied research plan places machine-learning model design <strong>after</strong> completion of the literature-derived dataset and environmental predictor extraction. The goal is to predict heavy-metal concentrations using basin- and site-scale environmental predictors.</p>
+        <p>A specific algorithm, final feature set, train/test strategy and performance metric have not yet been finalized in the supplied project materials. They are therefore not presented here as completed methodological decisions.</p>
+      </div>
+      <div class="code-schematic" aria-label="Current research pipeline">Published studies
+      ↓
+Structured heavy-metal database
+      ↓
+Location preparation + data harmonization
+      ↓
+200 m / 500 m / 1000 m environmental predictors
+      ↓
+Final modeling dataset
+      ↓
+Machine-learning model design
+      ↓
+Prediction and interpretation</div>
+    </section>
+
+    <section class="article-section" id="quality">
+      <h2>Data-quality and comparability challenges</h2>
+      <div class="reading">
+        <p>A literature-derived environmental dataset is inherently heterogeneous. The workbook already shows differences in capitalization, division spelling, sample descriptions, analytical-method reporting, missing coordinates, below-detection-limit notation, observation-year availability, and the set of metals/physicochemical variables reported by each paper.</p>
+        <p>Those differences are not treated as information to hide. They have to be resolved or explicitly retained during preparation of the modeling dataset. The working plan includes category/name normalization, unit auditing, explicit handling of BDL and missing values, and source-level traceability so each extracted value can be checked against the paper from which it came.</p>
+        <div class="callout"><strong>Still to be decided:</strong> the final preprocessing rules, model family and validation strategy are part of the next research stage and are not claimed as completed work on this page.</div>
+      </div>
+    </section>
+
+    <section class="article-section" id="next">
+      <h2>Next milestones</h2>
+      <div class="reading">
+        <ul>
+          <li>Complete buffer-based rainfall, population and land-use extraction.</li>
+          <li>Finish metadata/category harmonization and location-quality checks.</li>
+          <li>Define metal-specific modeling datasets based on available coverage and comparability.</li>
+          <li>Design the machine-learning modeling and validation workflow.</li>
+          <li>Evaluate model performance and interpret the environmental predictors used in the final models.</li>
+          <li>Develop spatial prediction outputs after the modeling framework is validated.</li>
+        </ul>
+        <p>This page will be updated as the project moves from data construction into validated modeling; planned outputs are deliberately separated from completed work.</p>
+      </div>
+      <div class="inline-actions">
+        <a class="btn btn-quiet" href="../index.html#research">Back to research experience</a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer"><div class="footer-inner"><span>© <span data-year>2026</span> Utsho Bhowmik</span><a href="../index.html">Back to portfolio</a></div></footer>
+<script src="../script.js"></script>
+</body>
+</html>

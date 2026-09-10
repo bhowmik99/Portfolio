@@ -1,195 +1,282 @@
-<!-- =========================
-     PROBLEM STATEMENT
-========================= -->
-
-<section>
-
-<h2>Problem Statement</h2>
-
-<p style="text-align: justify;">
-
-Groundwater is the main source of drinking and irrigation water in Bangladesh, yet it faces rising 
-stress from overuse and pollution. In Khulna’s urban fringe, the Rajbandh open dumpsite 
-produces leachate that can carry Cr into the aquifer, but its long-term impact is not quantified due 
-to limited monitoring and the absence of a site-specific simulation model. 
-The study area is shifting from agriculture to housing, and new wells may be installed near the 
-dumpsite. Without a calibrated flow and transport model, the risk of chronic exposure through 
-groundwater remains uncertain, and planning for safe abstraction or control measures is largely 
-guesswork. The problem is sharpened by scarce hydrological and water-quality data, which 
-hampers reliable prediction and decision-making. 
-• The dumpsite lacks engineered containment and monitoring, allowing leachate to infiltrate 
-and migrate with groundwater. 
-• Heavy metals detected in landfill leachate elsewhere are toxic and persistent, posing 
-serious health risks even at low levels. 
-• No calibrated contamination transport model exists for Rajbandh to simulate long-term 
-plume migration, breakthrough timing. 
-• Decision-makers lack evidence to set well setback distances, design monitoring networks, 
-or evaluate management options under limited data. 
-Therefore, the core problem is the absence of a validated, long-term groundwater flow and solute 
-transport model for a data-scarce urban fringe dumpsite that can quantify heavy metal plume 
-evolution, estimate exposure at existing and future wells, and inform risk-based management in 
-Khulna.
-
-</p>
-
-</section>
-
-
-
-<!-- =========================
-     OBJECTIVE
-========================= -->
-
-<section>
-
-<h2>Objective</h2>
-
-<ul>
-
-<li>
-To assess and predict long-term migration of Cr in groundwater of Rajbandh landfill.
-</li>
-
-<li>
-To assess groundwater flow direction and predict water level depletion in the dry season 
-of Jalma union, Khulna.
-</li>
-
-<li>
-To assess hydraulic conductivity as a key parameter in an advection-dominated transport 
-system. 
-</li>
-
-<li>
-To establish a relation between elapsed time and the affected area using projection 
-analysis. 
-</li>
-
-</ul>
-
-</section>
-
-
-
-<!-- =========================
-     METHODOLOGY
-========================= -->
-
-<section>
-
-<h2>Methodology</h2>
-
-<p style="text-align: justify;">
-
-To simulate the transportation of heavy metals, it is essential to first develop a groundwater simulation model.
-Consequently, the entire study is divided into two sections: the development of a groundwater model and the subsequent simulation of heavy metal transportation.
-Model Muse 5.3.1.0 was employed as the graphical user interface (GUI) for the groundwater model, while MODFLOW 2005 and MT3DMS were employed for groundwater modelling and heavy metal transport, respectively.
-Arc GIS 10.8 is used for data preparation and contamination mapping.
-
-</p>
-
-
-
-<!-- =========================
-     RESULT
-========================= -->
-
-<section>
-
-<h2>Result</h2>
-
-<p style="text-align: justify;">
-
-Write the main results of your research here.
-The simulation results demonstrate a progressive expansion of chromium-affected areas (> 0.05 mg/L) over the 33-year modeling period, with varying rates of change across different temporal intervals. 
-The contamination plume area exhibited consistent growth throughout the simulation, expanding from an initial area of 0.15 km² in year 1 to 0.66 km² by year 33, representing an overall increase of 0.51 km² or 340% total expansion over the entire simulation period.
-
-</p>
-
-
-<h3>Key Findings</h3>
-
-<ul>
-
-<li>
-Cr migration tends to the direction of NW which is aligning with the direction of groundwater flow.
-So, a predominantly advection-controlled migration pattern.
-</li>
-
-<li>
-The simulation results show characteristic longitudinal spreading patterns where the plume progressively elongates downgradient from the landfill source, demonstrating the influence of longitudinal dispersivity on contaminant distribution.
-</li>
-
-<li>
-The breakthrough time analysis demonstrates that natural clay layers offer a critical 20-year window of effective protection before chromium concentrations in the underlying sand aquifer exceed WHO drinking water limits, with the clay’s low hydraulic conductivity and sorption capacity significantly retarding contaminant migration.
-</li>
-
-<li>
-The comparative analysis between clay and sand layers reveals the fundamental role of hydraulic conductivity as the controlling parameter in contaminant migration patterns.
-</li>
-
-</ul>
-
-
-<!-- Optional Result Figure -->
-
-<img
-src="result-figure.jpg"
-alt="Research result"
-style="width:100%; max-width:900px; display:block; margin:20px auto;"
->
-
-<p style="text-align:center;">
-Figure: Write figure description here.
-</p>
-
-</section>
-
-
-
-<!-- =========================
-     LIMITATION & FUTURE SCOPE
-========================= -->
-
-<section>
-
-<h2>Limitation & Future Scope</h2>
-
-<h3>Limitations</h3>
-
-<ul>
-
-<li>
-Write limitation 1 here.
-</li>
-
-<li>
-Write limitation 2 here.
-</li>
-
-<li>
-Write limitation 3 here.
-</li>
-
-</ul>
-
-
-<h3>Future Scope</h3>
-
-<ul>
-
-<li>
-Write future research direction 1 here.
-</li>
-
-<li>
-Write future research direction 2 here.
-</li>
-
-<li>
-Write future research direction 3 here.
-</li>
-
-</ul>
-
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chromium Transport Modeling | Utsho Bhowmik</title>
+  <meta name="description" content="Detailed research case study: coupled MODFLOW–MT3DMS modeling of long-term chromium migration from the Rajbandh open landfill in Khulna, Bangladesh.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip-link" href="#article">Skip to content</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">Utsho Bhowmik <small>Environmental Research</small></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="../index.html#research" aria-current="page">Research Experience</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../assets/docs/Utsho_Bhowmik_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#research">Research Experience</a> / Chromium transport</div>
+    <span class="status published">Published research</span>
+    <h1>Modeling long-term chromium migration from the Rajbandh open landfill</h1>
+    <p class="lede">A coupled groundwater-flow and contaminant-transport study built to quantify how chromium may migrate through a data-scarce, multilayer aquifer system on the urban fringe of Khulna, Bangladesh.</p>
+    <div class="page-meta">
+      <span>Water Practice & Technology · 2026</span>
+      <span>First & corresponding author</span>
+      <span>MODFLOW-2005 · MT3DMS · ModelMuse · ArcGIS</span>
+    </div>
+    <div class="inline-actions" style="margin-top:24px;">
+      <a class="btn btn-primary" href="https://doi.org/10.2166/wpt.2026.253" target="_blank" rel="noopener">Read published article ↗</a>
+      <a class="btn btn-quiet" href="https://scholar.google.com/citations?hl=en&user=8uxMQJEAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
+    </div>
+  </div>
+</header>
+
+<main class="container page-layout" id="article">
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-title">On this page</div>
+    <a href="#problem">Problem & gap</a>
+    <a href="#questions">Research questions</a>
+    <a href="#study-area">Study area & data</a>
+    <a href="#hydro">Hydrostratigraphy</a>
+    <a href="#model">Numerical model</a>
+    <a href="#calibration">Calibration</a>
+    <a href="#flow">Groundwater flow</a>
+    <a href="#plume">Plume evolution</a>
+    <a href="#layers">Clay vs. sand</a>
+    <a href="#breakthrough">Breakthrough</a>
+    <a href="#projection">Projection</a>
+    <a href="#limits">Limitations</a>
+    <a href="#contribution">Contribution</a>
+  </aside>
+
+  <article class="article">
+    <section class="article-section" id="problem">
+      <h2>Why this study was needed</h2>
+      <div class="reading">
+        <p>Rajbandh is an open, unlined landfill in Jalma Union near Khulna City. The site receives a major portion of the municipal solid waste generated by Khulna City Corporation, while the surrounding urban fringe is undergoing land-use change and depends on groundwater for domestic and other uses. Leachate migration therefore raises a practical question that short-term sampling alone cannot answer: <em>where could contamination move over decades?</em></p>
+        <div class="callout">
+          <strong>Research gap.</strong> The published study identifies this work as the first calibrated contaminant-transport model for the Rajbandh landfill site. Earlier work documented environmental contamination in and around the area, but no calibrated site-specific transport model had quantified long-term chromium plume migration and clay-layer breakthrough.
+        </div>
+        <p>The challenge was also methodological. The site is data-scarce, monitoring wells are limited, and the subsurface is not a single homogeneous aquifer. The modeling framework therefore had to combine available field observations with a multilayer conceptualization while keeping the simulated transport assumptions explicit.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric-box"><strong>50.82 km²</strong><span>Jalma Union model domain</span></div>
+        <div class="metric-box"><strong>5 layers</strong><span>hydrostratigraphic framework</span></div>
+        <div class="metric-box"><strong>50 × 50 m</strong><span>finite-difference grid resolution</span></div>
+        <div class="metric-box"><strong>32,277</strong><span>cells per model layer</span></div>
+      </div>
+    </section>
+
+    <section class="article-section" id="questions">
+      <h2>Research questions</h2>
+      <div class="reading">
+        <p>The model was designed around a set of linked hydrogeologic questions rather than a software exercise:</p>
+        <ul>
+          <li>How does the chromium-affected area evolve over a multi-decadal simulation?</li>
+          <li>How does the local groundwater-flow field control plume direction?</li>
+          <li>How strongly does layer-wise hydraulic conductivity affect migration between clay and sand units?</li>
+          <li>How long does the upper clay aquitard delay the selected chromium threshold from reaching the underlying sand aquifer?</li>
+          <li>Can a calibrated MODFLOW–MT3DMS framework provide a defensible baseline for groundwater-risk assessment in a monitoring-limited setting?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="article-section" id="study-area">
+      <h2>Study area & data foundation</h2>
+      <div class="two-col">
+        <div class="reading">
+          <p>The Rajbandh landfill is located in Jalma Union, Batiaghata Upazila, immediately outside the southwest boundary of Khulna City Corporation. The landfill itself occupies approximately 0.074 km²; the broader modeling domain covers about 50.82 km².</p>
+          <p>Spatial and hydrogeologic inputs were assembled to define surface elevation, model boundaries, aquifer layering, hydraulic properties, recharge and groundwater-flow conditions. Field chromium measurements were subsequently used to calibrate and evaluate the transport simulation.</p>
+          <p>ArcGIS was used for spatial preparation and visualization, while ModelMuse provided the graphical environment for constructing the MODFLOW and MT3DMS models.</p>
+        </div>
+        <figure class="figure">
+          <img src="../assets/images/chromium/study-area.jpeg" alt="Study area map of Rajbandh landfill and Jalma Union">
+          <figcaption>Study area and Rajbandh landfill location used in the model.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="hydro">
+      <h2>Representing a multilayer subsurface</h2>
+      <div class="reading">
+        <p>A central modeling decision was to represent the site with <strong>layer-specific hydraulic properties</strong>, rather than applying one uniform conductivity to the entire subsurface. The conceptual model contains two sandy aquifers separated and bounded by lower-permeability aquitards.</p>
+      </div>
+      <div class="layer-stack" aria-label="Five-layer hydrostratigraphic model">
+        <div class="layer"><strong>Upper clay aquitard</strong><span>1–35 m</span><span>K = 0.91 m/d</span><span>Sy = 0.0927</span></div>
+        <div class="layer"><strong>1st aquifer</strong><span>35–100 m</span><span>K = 7.35 m/d</span><span>Sy = 0.14</span></div>
+        <div class="layer"><strong>Middle silty aquitard</strong><span>100–150 m</span><span>K = 1.25 m/d</span><span>Sy = 0.12</span></div>
+        <div class="layer"><strong>2nd aquifer</strong><span>150–270 m</span><span>K = 5.00 m/d</span><span>Sy = 0.1238</span></div>
+        <div class="layer"><strong>Bottom clay aquitard</strong><span>270–325 m</span><span>K = 0.42 m/d</span><span>Sy = 0.0586</span></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Layer</th><th>Depth (m)</th><th>Hydraulic conductivity (m/d)</th><th>Specific storage (1/m)</th><th>Specific yield</th></tr></thead>
+          <tbody>
+            <tr><td>Upper clay aquitard</td><td>1–35</td><td>0.91</td><td>4.94×10⁻⁴</td><td>0.0927</td></tr>
+            <tr><td>1st aquifer</td><td>35–100</td><td>7.35</td><td>1.35×10⁻⁴</td><td>0.14</td></tr>
+            <tr><td>Middle silty aquitard</td><td>100–150</td><td>1.25</td><td>2.30×10⁻⁴</td><td>0.12</td></tr>
+            <tr><td>2nd aquifer</td><td>150–270</td><td>5.00</td><td>2.12×10⁻⁴</td><td>0.1238</td></tr>
+            <tr><td>Bottom clay aquitard</td><td>270–325</td><td>0.42</td><td>7.98×10⁻⁴</td><td>0.0586</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout accent"><strong>Why this matters:</strong> the first sandy aquifer has a hydraulic conductivity about <strong>8.1 times</strong> that of the upper clay aquitard (7.35 vs. 0.91 m/d). That contrast becomes one of the clearest controls on the simulated plume footprint.</div>
+      <figure class="figure">
+        <img src="../assets/images/chromium/hydrostratigraphy.jpeg" alt="Hydrostratigraphic representation used for the groundwater model">
+        <figcaption>Hydrostratigraphic representation used to define the multilayer groundwater system.</figcaption>
+      </figure>
+    </section>
+
+    <section class="article-section" id="model">
+      <h2>Coupled numerical modeling framework</h2>
+      <div class="reading">
+        <p>The study separated the problem into groundwater flow and solute transport. <strong>MODFLOW-2005</strong> simulated groundwater flow from 2010 to 2050, and <strong>MT3DMS</strong> simulated chromium transport from 2017 to 2050. ModelMuse was used to construct and manage the finite-difference model, and ArcGIS was used for spatial outputs and contamination mapping.</p>
+        <p>The transport simulation used a deliberately conservative formulation focused on <strong>advection and hydrodynamic dispersion</strong>. Geochemical reactions, sorption and other reactive processes were not represented in the published transport model. This keeps the physical assumptions transparent and avoids attributing simulated retardation to chemistry that was not modeled.</p>
+      </div>
+      <div class="figure-grid">
+        <figure class="figure"><img src="../assets/images/chromium/modeling-workflow.png" alt="Groundwater and contaminant transport modeling workflow"><figcaption>Flow-to-transport workflow used in the study.</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/modelmuse-grid.png" alt="ModelMuse model grid and layer setup"><figcaption>Model construction and vertical discretization in ModelMuse.</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/advection.jpeg" alt="Advection dominated chromium plume pattern"><figcaption>Modeled plume orientation relative to the simulated velocity field.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="calibration">
+      <h2>Calibration against observed chromium</h2>
+      <div class="two-col">
+        <div class="reading">
+          <p>The transport model was first run through 2025 and calibrated against observed chromium concentrations. Longitudinal dispersivity was adjusted during calibration, after which the full transport simulation was extended through 2050.</p>
+          <div class="callout"><strong>Published model evaluation:</strong> simulated and observed Cr concentrations showed a satisfactory fit with <strong>R² = 0.89</strong>.</div>
+          <p>The thesis development file contains a slightly different preliminary regression value; this portfolio uses the <strong>final published article</strong> as the authoritative value.</p>
+        </div>
+        <figure class="figure"><img src="../assets/images/chromium/calibration.png" alt="Observed versus modeled chromium concentration calibration plot"><figcaption>Observed-versus-modeled Cr concentration comparison used for model evaluation.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="flow">
+      <h2>Groundwater flow establishes the transport pathway</h2>
+      <div class="reading">
+        <p>The published results describe a local groundwater-flow direction from <strong>south to north</strong>. The study links this localized pattern to groundwater abstraction in the direction of Khulna City, which lowers hydraulic head in the northern part of the model domain.</p>
+        <p>The flow simulation also projects a progressive decline in average dry-season groundwater level over the 2010–2050 period, adding a dynamic hydraulic context for the transport analysis.</p>
+      </div>
+      <div class="two-col">
+        <figure class="figure"><img src="../assets/images/chromium/flow-direction.jpeg" alt="Modeled groundwater flow direction"><figcaption>Modeled groundwater-flow direction across the study area.</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/gw-level.jpeg" alt="Projected dry season groundwater elevation changes"><figcaption>Projected dry-season groundwater-level change across the flow simulation period.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="plume">
+      <h2>Thirty-three years of plume evolution</h2>
+      <div class="reading">
+        <p>The most direct long-term result is the expansion of the sand-aquifer area above the selected chromium threshold. The affected footprint increases from <strong>0.15 km² after one year</strong> to <strong>0.66 km² after 33 years</strong>.</p>
+        <p>The plume is elongated along the groundwater-flow path, consistent with an advection-dominated transport regime. Dispersion contributes longitudinal and transverse spreading, while advective groundwater movement controls the principal direction of migration.</p>
+      </div>
+      <div class="gallery-5">
+        <figure class="figure"><img src="../assets/images/chromium/plume-year1.jpeg" alt="Chromium plume after 1 year"><figcaption>Year 1 · 0.15 km²</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/plume-year8.jpeg" alt="Chromium plume after 8 years"><figcaption>Year 8 · 0.32 km²</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/plume-year13.jpeg" alt="Chromium plume after 13 years"><figcaption>Year 13 · 0.41 km²</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/plume-year23.jpeg" alt="Chromium plume after 23 years"><figcaption>Year 23 · 0.55 km²</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/plume-year33.jpeg" alt="Chromium plume after 33 years"><figcaption>Year 33 · 0.66 km²</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="layers">
+      <h2>Hydraulic conductivity controls the contrast between clay and sand</h2>
+      <div class="reading">
+        <p>The study directly compared the affected areas in the upper clay layer and the first sand aquifer. Because the sand unit has much higher hydraulic conductivity, its modeled contamination footprint expands more rapidly and remains substantially larger through the simulation.</p>
+      </div>
+      <div class="bars" aria-label="Affected area comparison after 33 years">
+        <div class="bar-row"><span>Sand</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><strong>0.66</strong></div>
+        <div class="bar-row"><span>Clay</span><div class="bar-track"><div class="bar-fill clay" style="width:47%"></div></div><strong>0.31</strong></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Modeled time</th><th>Clay affected area (km²)</th><th>Sand affected area (km²)</th><th>Sand relative to clay</th></tr></thead>
+          <tbody>
+            <tr><td>1 year</td><td>0.081</td><td>0.15</td><td>85% larger</td></tr>
+            <tr><td>8 years</td><td>0.12</td><td>0.32</td><td>167% larger</td></tr>
+            <tr><td>13 years</td><td>0.16</td><td>0.41</td><td>156% larger</td></tr>
+            <tr><td>23 years</td><td>0.24</td><td>0.55</td><td>129% larger</td></tr>
+            <tr><td>33 years</td><td>0.31</td><td>0.66</td><td>113% larger</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="gallery-5">
+        <figure class="figure"><img src="../assets/images/chromium/clay-year1.jpeg" alt="Clay layer plume after 1 year"><figcaption>Clay · year 1</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/clay-year8.jpeg" alt="Clay layer plume after 8 years"><figcaption>Clay · year 8</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/clay-year13.jpeg" alt="Clay layer plume after 13 years"><figcaption>Clay · year 13</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/clay-year23.jpeg" alt="Clay layer plume after 23 years"><figcaption>Clay · year 23</figcaption></figure>
+        <figure class="figure"><img src="../assets/images/chromium/clay-year33.jpeg" alt="Clay layer plume after 33 years"><figcaption>Clay · year 33</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="breakthrough">
+      <h2>Modeled clay-layer breakthrough: approximately 20 years</h2>
+      <div class="two-col">
+        <div class="reading">
+          <p>The breakthrough analysis tracks when the selected chromium concentration threshold is reached in the underlying sand aquifer. Under the study assumptions, the model identifies a breakthrough time of approximately <strong>20 years</strong> for the <strong>0.05 mg/L</strong> threshold used in the study.</p>
+          <div class="callout accent"><strong>Interpretation:</strong> this is a modeled physical-transport result for the study configuration—not evidence that chemical sorption was simulated. The low permeability of the clay unit reduces advective transport relative to the sand aquifer.</div>
+        </div>
+        <figure class="figure"><img src="../assets/images/chromium/breakthrough.png" alt="Clay layer breakthrough analysis chart"><figcaption>Breakthrough-time analysis used to identify the approximately 20-year threshold crossing.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="article-section" id="projection">
+      <h2>Long-term projection of affected area</h2>
+      <div class="reading">
+        <p>The final published paper reports that the temporal expansion of the affected area is represented effectively by a <strong>second-order polynomial trend</strong> with <strong>R² = 0.9988</strong>. The final peer-reviewed formulation is reported here rather than an earlier projection explored during thesis development.</p>
+        <div class="callout"><strong>Source hierarchy used on this page:</strong> when the thesis-development document and the final journal article differ, the published article is treated as the authoritative version of the reported result.</div>
+      </div>
+    </section>
+
+    <section class="article-section" id="limits">
+      <h2>Limitations & what the model does not claim</h2>
+      <div class="reading">
+        <p>The study is useful precisely because its constraints are explicit. The main limitations reported in the thesis and final paper include:</p>
+        <ul>
+          <li>Limited groundwater monitoring records and lack of a continuous time-series dataset.</li>
+          <li>Concentration calibration based on a small number of observation wells.</li>
+          <li>Insufficient monitoring information to calibrate groundwater-flow velocity as robustly as desired.</li>
+          <li>Uncertainty in model boundary conditions, recharge and evapotranspiration representation.</li>
+          <li>Layer-wise hydraulic conductivity, specific yield and specific storage were represented, while some other properties were simplified.</li>
+          <li>No explicit geochemical reactions or reactive-transport processes were included.</li>
+        </ul>
+        <p>Accordingly, the results are best interpreted as a calibrated physical transport framework and a baseline for improved monitoring and future reactive/uncertainty modeling—not as a complete geochemical description of chromium fate.</p>
+      </div>
+    </section>
+
+    <section class="article-section" id="contribution">
+      <h2>My contribution & research significance</h2>
+      <div class="reading">
+        <p>The published author-contribution statement credits me with <strong>conceptualization, methodology, software modeling, data curation, and writing the original draft</strong>, with the work supervised and reviewed by Professor Md. Saiful Islam.</p>
+        <p>For me, the main value of this study is methodological: it required moving from an environmental question to a hydrostratigraphic conceptual model, translating that conceptualization into a numerical grid, coupling groundwater flow with solute transport, calibrating the simulation against field observations, analyzing spatial plume behavior, and carrying the work through peer review.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric-box"><strong>R² 0.89</strong><span>published Cr model evaluation</span></div>
+        <div class="metric-box"><strong>8.1×</strong><span>K contrast: sand vs. upper clay</span></div>
+        <div class="metric-box"><strong>340%</strong><span>increase from 0.15 to 0.66 km²</span></div>
+        <div class="metric-box"><strong>1st</strong><span>calibrated Rajbandh contaminant-transport model reported by the article</span></div>
+      </div>
+      <div class="inline-actions">
+        <a class="btn btn-primary" href="https://doi.org/10.2166/wpt.2026.253" target="_blank" rel="noopener">Published paper ↗</a>
+        <a class="btn btn-quiet" href="river-ml.html">Next: ongoing river ML research →</a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="footer"><div class="footer-inner"><span>© <span data-year>2026</span> Utsho Bhowmik</span><a href="../index.html">Back to portfolio</a></div></footer>
+<script src="../script.js"></script>
+</body>
+</html>
